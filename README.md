@@ -1,5 +1,5 @@
 # The Lox Language
-This project follows the book [*Crafting Interpreters*](www.http://craftinginterpreters.com/) by Robert Nystrom. 
+This project follows the book [*Crafting Interpreters*](http://craftinginterpreters.com/) by Robert Nystrom. 
 
 ## The Goals of This Project
 By reading this book, I intend to
