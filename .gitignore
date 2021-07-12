@@ -1,2 +1,4 @@
 book-tests/
 craftinginterpreters/
+lox.code-workspace
+jlox/.idea/

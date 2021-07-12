@@ -1,0 +1,4 @@
+com\danielbeans\jlox\Token.class
+com\danielbeans\jlox\Scanner.class
+com\danielbeans\jlox\TokenType.class
+com\danielbeans\jlox\Lox.class
