@@ -2,3 +2,6 @@ book-tests/
 craftinginterpreters/
 lox.code-workspace
 jlox/.idea/
+jlox/.settings/
+jlox/.project
+jlox/jlox.iml
