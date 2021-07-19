@@ -59,6 +59,15 @@ class Scanner {
     return source.charAt(current++); // "Consumes" char by incrementing
   }
 
+  // Returns numAdvance number character from source file
+  private char advance(int numAdvance) {
+    if (current + numAdvance > source.length())
+      return '\0';
+
+    current += numAdvance - 1;
+    return source.charAt(current++);
+  }
+
   // Calls next overload
   private void addToken(TokenType type) {
     addToken(type, null);
@@ -121,6 +130,12 @@ class Scanner {
           // A comment goes until the end of the line.
           while (peek() != '\n' && !isAtEnd())
             advance();
+        } else if (match('*')) {
+          // A comment that goes until closing "*/"
+          while ((peek() != '*' || peekNext() != '/') && !isAtEnd())
+            advance();
+
+          advance(2);   // Consume '*' and '/' 
         } else {
           addToken(SLASH);
         }
@@ -160,7 +175,7 @@ class Scanner {
     }
   }
 
-  // Checks if reserved word, then stores the identifier appropriately 
+  // Checks if reserved word, then stores the identifier appropriately
   private void identifier() {
     while (isAlphaNumeric(peek()))
       advance();
@@ -219,7 +234,7 @@ class Scanner {
     if (source.charAt(current) != expected)
       return false;
 
-    current++; // Consumes the char regardless
+    current++;  // Consumes the char regardless
     return true;
   }
 
